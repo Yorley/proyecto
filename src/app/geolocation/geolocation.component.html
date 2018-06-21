@@ -1,21 +1,21 @@
 <nav class="navbar navbar-dark bg-dark sticky-top">
   <div class="form-check form-check-inline">
-      <label *ngFor="let fruit of fruits | async" class="mr-3">
-        <input type="checkbox" [(ngModel)]="visibleMarkers[fruit.key]" 
-         name="{{fruit.key}}" class="mr-1"><span class="text-light text-capitalize">{{fruit.name}}</span>
+      <label *ngFor="let producer of producers | async" class="mr-3">
+        <input type="checkbox" [(ngModel)]="visibleMarkers[producer.name]" 
+         name="{{producer.name}}" class="mr-1"><span class="text-light text-capitalize">{{producer.products_id[0]}}</span>
       </label>
   </div>
 </nav> 
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-  <ng-container *ngFor="let fruit of fruits | async">
-    <agm-marker [latitude]="convertStringToNumber(fruit.latitude)" [longitude]="convertStringToNumber(fruit.longitude)" *ngIf="visibleMarkers[fruit.key]"> <!--Aca esta el error necesito que lo vea numero-->
+  <ng-container *ngFor="let producer of producers | async">
+    <agm-marker [latitude]="convertStringToNumber(producer.latitude)" [longitude]="convertStringToNumber(producer.longitude)" *ngIf="visibleMarkers[producer.name]"> <!--Aca esta el error necesito que lo vea numero-->
       <agm-info-window>
-        <h5>{{fruit.name}}</h5>
-        <p class="text-muted">Recomendaciones de temperatura para su cultivo.</p>
+        <h5>{{producer.name}}</h5>
+        <p class="text-muted">Productor de cultivos como :{{producer.products_id}}</p>
         <div class="d-flex justify-content-between">
-            <span class="mr-1"><i class="fa fa-thermometer-full text-muted"></i> <strong>Máx.</strong>{{fruit.max_temperature}}</span>
-            <span class="mr-1"><i class="fa fa-thermometer-half text-muted"></i> <strong>Prom.</strong>{{fruit.mean_temperature}}</span>
-            <span class="mr-1"><i class="fa fa-thermometer-empty text-muted"></i> <strong>Min.</strong> {{fruit.min_temperature}}</span>
+            <span class="mr-1"><i class="fa fa-thermometer-full text-muted"></i> <strong>Latitud.</strong>{{producer.latitude}}</span>
+            <span class="mr-1"><i class="fa fa-thermometer-half text-muted"></i> <strong>Longitud.</strong>{{producer.longitude}}</span>
+            
         </div>
       </agm-info-window>
     </agm-marker>

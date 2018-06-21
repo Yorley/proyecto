@@ -42,6 +42,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AgmCoreModule } from '@agm/core';
 import { ChartsModule } from 'ng2-charts';
 import { GeolocationComponent } from './geolocation/geolocation.component';
+import { CalendarComponent } from './calendar/calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
     LoginComponent,
     ViewProfileComponent,
     UchatComponent,
-    GeolocationComponent
+    GeolocationComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

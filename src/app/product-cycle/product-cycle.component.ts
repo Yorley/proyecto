@@ -12,7 +12,7 @@ import { functions } from 'firebase';
 export class ProductCycleComponent implements OnInit {
 
   fruits: Observable<Fruit[]>;
-  soilFilter = {};
+  selectedValue = {};
 
   constructor(public db: AngularFireDatabase ) {}
 
