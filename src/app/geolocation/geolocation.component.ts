@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Marker } from '../classes/marker';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Fruit } from '../classes/fruit'; 
+import { Fruit } from '../classes/fruit';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-
 @Component({
-  selector: 'app-temperature-impact',
-  templateUrl: './temperature-impact.component.html',
-  styleUrls: ['./temperature-impact.component.css']
+  selector: 'app-geolocation',
+  templateUrl: './geolocation.component.html',
+  styleUrls: ['./geolocation.component.css']
 })
-export class TemperatureImpactComponent implements OnInit {
+export class GeolocationComponent implements OnInit {
   lat = 9.5649173;
   lng = -84.0078721;
   zoom = 15;

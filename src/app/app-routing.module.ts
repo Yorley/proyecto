@@ -14,6 +14,7 @@ import {CostComponent  } from "./cost/cost.component";
 import {SaleComponent  } from "./sale/sale.component";
 import {WasteComponent  } from "./waste/waste.component";
 import {WarningComponent  } from "./warning/warning.component";
+import { GeolocationComponent } from "./geolocation/geolocation.component";
 
 import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
@@ -44,7 +45,8 @@ const routes: Routes = [
   { path: 'viewProfile', component: ViewProfileComponent },
   { path: 'register', component: RegisterComponent },
   { path:'chating', component: ChatComponent},
-  { path:'chat', component: UchatComponent}
+  { path:'chat', component: UchatComponent},
+  { path:'geolocation', component: GeolocationComponent}
   
    
   
